@@ -1,10 +1,11 @@
-const key = 'users';
+const key = 'names';
 
-export const addUser = () => {
-  localStorage.setItem( key, JSON.stringify(['test1', 'test2']) );
+export const setNames = (names) => {
+  localStorage.setItem( key, JSON.stringify(names) );
 }
 
-export const getUsers = () => {
+// retrieves names from local storage and parses the data
+export const getNames = () => {
   const data = localStorage.getItem( key );
   let parsedData;
   try {
