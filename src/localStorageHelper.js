@@ -1,21 +1,37 @@
 // import dummydata from './dummydata.js'
-const key = 'names';
-
-// localStorage.setItem( key, JSON.stringify(dummydata) );
+// localStorage.setItem( _names, JSON.stringify(dummydata) );
+const _names = 'names'
+const _size = 'size'
 
 export const setNames = (names) => {
-  localStorage.setItem( key, JSON.stringify(names) );
+  localStorage.setItem( _names, JSON.stringify(names) );
   return names;
-}
+};
+
+export const setSize = (size) => {
+  localStorage.setItem( _size, JSON.stringify(size) );
+  return size
+};
 
 // retrieves names from local storage and parses the data
 export const getNames = () => {
-  const data = localStorage.getItem( key );
+  const data = localStorage.getItem( _names );
   let parsedData;
   try {
     parsedData = JSON.parse(data);
   } catch(e){
     parsedData = [];
+  }
+  return parsedData;
+}
+
+export const getSize = () => {
+	const data = localStorage.getItem( _size ) || '5';
+	let parsedData;
+  try {
+    parsedData = parseInt(data, 0);
+  } catch(e){
+    parsedData = 5;
   }
   return parsedData;
 }
