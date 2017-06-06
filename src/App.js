@@ -25,6 +25,7 @@ class App extends Component {
   }
 
   handleSizeChange(size){
+    // save size selection in local storage
     setSize(size);
     this.setState({ size });
   }
