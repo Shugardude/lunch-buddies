@@ -15,7 +15,7 @@ export const setSize = (size) => {
 
 // retrieves names from local storage and parses the data
 export const getNames = () => {
-  const data = localStorage.getItem( _names );
+  const data = localStorage.getItem( _names ) || [];
   let parsedData;
   try {
     parsedData = JSON.parse(data);

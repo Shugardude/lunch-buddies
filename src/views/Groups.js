@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 const splitGroups = (size, names) => {
+  if (!names || !names.length) return [];
   const groups = [];
   const len = names.length;
   if (len <= size) groups.push(names);
