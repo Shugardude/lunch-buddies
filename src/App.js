@@ -11,7 +11,6 @@ class App extends Component {
 
   constructor(props){
     super(props);
-    // default group size is large
     this.state = { names: getNames(), input: '', size: getSize() };
     this.handleInput = this.handleInput.bind(this);
     this.handleSizeChange = this.handleSizeChange.bind(this);
@@ -51,9 +50,9 @@ class App extends Component {
     const { input, names } = this.state;
     if (!input) return;
     else if (names.indexOf(input) > -1){
-      const updatedNames = names.splice(1, names.indexOf(input) - 1);
+      const updatedNames = names.slice();
+      updatedNames.splice(names.indexOf(input), 1);
       this.setState({ names: updatedNames, input: '', errorMessage: '' });
-      // update local storage every time a user is added
       setNames(updatedNames)
     } else {
       this.setState({ errorMessage: "Could not find name." });

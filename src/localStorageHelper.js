@@ -26,6 +26,7 @@ export const getNames = () => {
 }
 
 export const getSize = () => {
+  // default group size is large
 	const data = localStorage.getItem( _size ) || '5';
 	let parsedData;
   try {
