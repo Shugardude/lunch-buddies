@@ -38,7 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="header">Today's Lunch Groups</div>
-        <Sizes size={size} />
+        <Sizes size={size} click={this.handleSizeChange} />
         <Groups names={names} />
         <div>
           <input value={input} onChange={this.handleInput}/>

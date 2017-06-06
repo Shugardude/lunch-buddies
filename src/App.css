@@ -10,6 +10,32 @@
   margin: 30px 0;
 }
 
+/* Sizes */
+
+.sizes {
+  height: 50px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.sizebutton {
+  height: 50px;
+  width: 100px;
+  line-height: 50px;
+  float: left;
+  text-align: center;
+  color: #fff;
+  background-color: #337ab7;
+  border: 1px solid #2e6da4;
+  cursor: pointer;
+}
+
+.sizebutton.selected {
+  background-color: #2e6da4;
+}
+
+/* Groups */
+
 .groups {
   display: flex;
   flex-flow: row wrap;
