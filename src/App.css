@@ -18,7 +18,7 @@
   margin-bottom: 20px;
 }
 
-.sizebutton {
+.button {
   height: 50px;
   width: 100px;
   line-height: 50px;
@@ -28,10 +28,29 @@
   background-color: #337ab7;
   border: 1px solid #2e6da4;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
-.sizebutton.selected {
+.button.selected {
   background-color: #2e6da4;
+}
+
+/* Shuffle */
+
+.shuffleContainer {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.button.shuffle {
+  width: 300px;
+  font-size: 20px;
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+  display: inline-block;
+  float: none;
 }
 
 /* Groups */

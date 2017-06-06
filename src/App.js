@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { setNames, getNames } from './localStorageHelper'
+import { setNames, getNames, shuffleNames } from './localStorageHelper'
 import './App.css';
 
 import Sizes from './Sizes.js'
+import ShuffleButton from './ShuffleButton.js'
 import Groups from './Groups.js'
+import Submit from './Submit.js'
 
 class App extends Component {
 
@@ -13,7 +15,8 @@ class App extends Component {
     this.state = { names: getNames(), input: '', size: 5 };
     this.handleInput = this.handleInput.bind(this);
     this.handleSizeChange = this.handleSizeChange.bind(this);
-    this.submit = this.submit.bind(this);
+    this.handleShuffle = this.handleShuffle.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput(e){
@@ -24,7 +27,11 @@ class App extends Component {
     this.setState({ size });
   }
 
-  submit(){
+  handleShuffle(){
+    this.setState({ names: shuffleNames() });
+  }
+
+  handleSubmit(){
     const { input, names } = this.state;
     if (!input) return;
     const updatedNames = [...names, input];
@@ -39,11 +46,9 @@ class App extends Component {
       <div className="App">
         <div className="header">Today's Lunch Groups</div>
         <Sizes size={size} click={this.handleSizeChange} />
-        <Groups names={names} />
-        <div>
-          <input value={input} onChange={this.handleInput}/>
-          <button onClick={this.submit}>Submit</button>
-        </div>
+        <ShuffleButton shuffle={this.handleShuffle} />
+        <Groups names={names} size={size} />
+        <Submit value={input} change={this.handleInput} submit={this.handleSubmit} />
       </div>
     );
   }
