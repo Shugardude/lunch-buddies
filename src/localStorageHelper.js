@@ -1,6 +1,6 @@
 // ran into an issue in the tests where localStorage was not defined
-import localStorageMock from './localStorageMock.js'
-if (!localStorage) localStorage = localStorageMock;
+// import localStorageMock from './localStorageMock.js'
+// if (!localStorage) localStorage = localStorageMock;
 
 // import dummydata from './dummydata.js'
 const _names = 'names'
