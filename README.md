@@ -20,6 +20,12 @@ npm install
 npm run start
 ```
 
+## Testing
+
+```sh
+npm test
+```
+
 ## Contributing
 
 1. Fork it (<https://github.com/Shugardude/lunch-buddies/fork>)

@@ -1,7 +1,13 @@
+// ran into an issue in the tests where localStorage was not defined
+import localStorageMock from './localStorageMock.js'
+if (!localStorage) localStorage = localStorageMock;
+
 // import dummydata from './dummydata.js'
-// localStorage.setItem( _names, JSON.stringify(dummydata) );
 const _names = 'names'
 const _size = 'size'
+
+// localStorage.setItem( _names, JSON.stringify(dummydata) );
+// localStorage.removeItem( _names );
 
 export const setNames = (names) => {
   localStorage.setItem( _names, JSON.stringify(names) );
@@ -42,7 +48,8 @@ export const shuffleNames = () => {
 }
 
 // randomly shuffle and array
-function shuffle(array) {
+export const shuffle = (array) => {
+  array = array.slice();
   var currentIndex = array.length, temporaryValue, randomIndex;
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
