@@ -26,7 +26,7 @@ npm run start
 npm test
 ```
 
-## Approaches
+## Approach
 
   - I used a react app with localStorage for persistence. Names and size selection are stored.
   - Users can select if they want small(3), medium(4), or large(5) groups.  The algorithm will attempt to group people into the the selected group size, but some groups will end up being bigger or smaller depending on the number of employees in the list.
@@ -42,7 +42,8 @@ npm test
   - Make delete more robust by showing list of users that can be removed by clicking an X.  Maybe add the ability to filter the list to easily find a name.
   - Option to temporarily remove a name from the list, in the case that someone is out for the day, so that the groups can update accordingly.
   - Support N number of people per group, specified by user.
-  - Drag and drop user names from one group to another, if user wants to cheat and put thier friend into their group.
+  - Drag and drop user names from one group to another, if user wants to cheat and put their friend into their group.
+  - Add ability in UI to add multiple names at once.
 
 
 ## Contributing
