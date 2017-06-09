@@ -4,6 +4,9 @@ import App from './App';
 import { splitGroups } from './split.js'
 import { shuffle } from './localStorageHelper.js'
 import names from './dummydata.js'
+// import { mount } from 'enzyme';
+
+import Group from './views/Group.js'
 
 const split1 = splitGroups(3, names);
 const split2 = splitGroups(4, names);
@@ -49,6 +52,16 @@ test('array is shuffled correctly', () => {
 	expect(shuffle(names).length).toBe(names.length);
 	expect(shuffle(names).join()).not.toBe(names.join())
 })
+
+
+// const wrapper = mount(<Group />);
+
+// expect(wrapper.find('.group').length).to.equal(1);
+// wrapper.find('a').simulate('click');
+// expect(wrapper.find('.clicks-1').length).to.equal(1);
+
+
+
 
 
 
